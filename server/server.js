@@ -9,18 +9,13 @@ const s3 = require("./s3");
 const server = require("http").Server(app);
 const io = require("socket.io")(server, {
     allowRequest: (req, callback) =>
-        callback(null, req.headers.referer.startsWith("http://localhost:3000")),
+        callback(null, req.headers.referer.startsWith("http://localhost:3001")),
 });
 
 const cookieSession = require("cookie-session");
 const db = require("./db");
 
-let secrets;
-if (process.env.NODE_ENV == "production") {
-    secrets = process.env; // in prod the secrets are environment variables
-} else {
-    secrets = require("../secrets"); // in dev they are in secrets.json which is listed in .gitignore
-}
+const secrets = require("../secrets"); // in dev they are in secrets.json which is listed in .gitignore
 
 const ses = new aws.SES({
     accessKeyId: secrets.AWS_KEY,

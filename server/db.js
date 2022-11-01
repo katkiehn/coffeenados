@@ -1,7 +1,6 @@
 const spicedPg = require("spiced-pg");
-const dbUrl =
-    process.env.DATABASE_URL ||
-    "postgres://postgres:postgres@localhost:5432/social_network";
+const secrets = require("../secrets");
+const dbUrl = secrets.DATABASE_URL;
 const db = spicedPg(dbUrl);
 const bcrypt = require("bcryptjs");
 

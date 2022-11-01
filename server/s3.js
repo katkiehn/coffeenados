@@ -4,12 +4,8 @@ const fs = require("fs");
 const S3_BUCKET = "coffeenados";
 exports.S3_BUCKET = S3_BUCKET;
 
-let secrets;
-if (process.env.NODE_ENV == "production") {
-    secrets = process.env; // in prod the secrets are environment variables
-} else {
-    secrets = require("../secrets"); // in dev they are in secrets.json which is listed in .gitignore
-}
+const secrets = require("../secrets"); // in dev they are in secrets.json which is listed in .gitignore
+
 // aws expects these key names
 const s3 = new aws.S3({
     accessKeyId: secrets.AWS_KEY,
