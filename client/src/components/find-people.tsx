@@ -58,7 +58,7 @@ export default function () {
             <div className="recent-users">
                 <h1>New Coffeenados</h1>
                 <p>
-                    Checkout some of our newest memebers and give them a warm
+                    Checkout some of our newest members and give them a warm
                     welcome!
                 </p>
                 <div className="users-list">

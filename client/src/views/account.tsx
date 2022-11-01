@@ -35,7 +35,7 @@ const Account = () => {
                                     Friends
                                 </Link>
                                 <Link className="header-link" to="/chat">
-                                    Kaffeklatsch
+                                    Kaffeeklatsch
                                 </Link>
                                 <a className="header-link" href="/logout">
                                     Logout
